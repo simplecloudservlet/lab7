@@ -38,7 +38,7 @@ public class Principal1 {
         HttpRequest request = HttpRequest.newBuilder()
 	    .uri(URI.create("https://api.correios.com.br/token/v1/autentica"))
 	    .POST(HttpRequest.BodyPublishers.noBody())
-	    .header("Authorization", getBasicAuthenticationHeader("<SEU_CPF_DO_CADASTRO>", "<CHAVE DA API>"))   
+	    .header("Authorization", getBasicAuthenticationHeader("<SEU_CPF_DO_CADASTRO>", "<CODIGO_DE_ACESSO_DA_API>"))   
 	    .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println("Response: " + response.statusCode() + "\n" + response.toString() + "\n" + response.body());
